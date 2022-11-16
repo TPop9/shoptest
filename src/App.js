@@ -8,7 +8,6 @@ import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 
-
 function App() {
   return (
     <div className="App">
@@ -19,8 +18,6 @@ function App() {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/auth">Auth </Link>
-          
-          
         </nav>
         <Switch>
           {/* Home */}
@@ -36,8 +33,8 @@ function App() {
             <Contact />
           </Route>
           <Route path="/auth">
-            <Register/>
-            <Login/>
+            <Register />
+            <Login />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -46,4 +43,3 @@ function App() {
 }
 
 export default App;
-

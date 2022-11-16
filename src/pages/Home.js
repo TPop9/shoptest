@@ -25,12 +25,10 @@ export default function Home() {
 
   return (
     <div className="content">
-      <div className="videoWrapper"
-        
-        
-      >
+      <div className="videoWrapper">
         <header>
-          <Iframe className="video"
+          <Iframe
+            className="video"
             url="https://www.youtube.com/embed/iSbDLAscjz8"
             position="absolute"
             top="0"
