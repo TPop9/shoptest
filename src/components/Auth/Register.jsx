@@ -78,7 +78,7 @@ const Register = () => {
       },
 
       {
-        label: "Rep Password",
+        label: "Confirm Password",
 
         value: matchPwd,
       },
