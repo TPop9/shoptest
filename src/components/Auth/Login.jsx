@@ -45,7 +45,7 @@ const Login = () => {
         <ModalDialog
           data={modalData}
           setModalData={setModalData}
-          title="Registration"
+          title="Login"
         />
       )}
 
