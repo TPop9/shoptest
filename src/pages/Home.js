@@ -24,15 +24,22 @@ export default function Home() {
   };
 
   return (
-    
     <div className="content">
-      <div style={{marginLeft: "150px"}}><header>
-        <Iframe url="https://www.youtube.com/embed/iSbDLAscjz8"
-                
-                width="640px"
-                height="320px"
-                display="block"
-                position="relative"/></header></div>
+      <div className="videoWrapper"
+        
+        
+      >
+        <header>
+          <Iframe className="video"
+            url="https://www.youtube.com/embed/iSbDLAscjz8"
+            position="absolute"
+            top="0"
+            left="0"
+            width="100%"
+            height="100%"
+          />
+        </header>
+      </div>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr" }}>
         {products.map((item) => {
           return (
@@ -47,7 +54,7 @@ export default function Home() {
           );
         })}
       </div>
-      <section>
+      <section style={{ width: "100%" }}>
         <h1>YOUR SELECTED ITEMS: </h1>
         {selectedProducts.map((item) => {
           return <Product item={item}></Product>;

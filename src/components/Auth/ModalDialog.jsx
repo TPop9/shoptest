@@ -1,68 +1,42 @@
-import React from 'react'
-import { Modal, Button } from 'react-bootstrap'
+import React from "react";
 
-function ModalDialog(props) {
-  const [isShow, invokeModal] = React.useState(true)
-  const initModal = () => {
-    return invokeModal(true)
-  }
-  const closeModal = () => {
-    return invokeModal(!true)
-  }
+import { Modal, Button } from "react-bootstrap";
+
+function ModalDialog({ data, setModalData, title }) {
+  const handleClose = () => {
+    setModalData(null);
+  };
+
   return (
-    <>
-      {props.data} 
-      <Modal style={{position: 'absolute',
-                    top: '35%',
-                    left: '39%',
-                    backgroundColor: "black",
-                    color: "red"
-                    }} show={isShow}>
-        <Modal.Header closeButton onClick={initModal}>
-          <Modal.Title>Registration</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <label htmlFor="name">
-            Name:
-          </label>
-          <input type="text" 
-                 disabled/> <br /> <br />
+    <Modal className="modal"
+      
+      show={true}
+    >
+      <Modal.Header closeButton>
+        <Modal.Title>{title}</Modal.Title>
+      </Modal.Header>
 
-          <label htmlFor="name">
-            Last Name:
-          </label>
-          <input type="text" 
-                 disabled/> <br /> <br />
+      <Modal.Body>
+        {data.map((item, index) => (
+          <div key={index}>
+            <label>{item.label}</label>
 
-          <label htmlFor="last-name">
-            Username:
-          </label>
-          <input type="text" 
-                 disabled/> <br /> <br />
+            <input type="text" value={item.value} disabled />
 
-          <label htmlFor="username">
-            Password:
-          </label>
-          <input type="password" 
-                 disabled/> <br /> <br />
+            <br />
 
-          <label htmlFor="confirm-pwd">
-            Confirm password:
-          </label>
-          <input type="text" 
-                 disabled/>                            
-          
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={closeModal}>
-            Close
-          </Button>
-          <Button variant="dark" onClick={initModal}>
-            Store
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  )
+            <br />
+          </div>
+        ))}
+      </Modal.Body>
+
+      <Modal.Footer>
+        <Button variant="danger" onClick={handleClose}>
+          Close
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
-export default ModalDialog
+
+export default ModalDialog;
