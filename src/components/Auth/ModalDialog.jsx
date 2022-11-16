@@ -9,7 +9,7 @@ function ModalDialog({ data, setModalData, title }) {
 
   return (
     <Modal className="modal" show={true}>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
 
